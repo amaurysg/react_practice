@@ -23,7 +23,7 @@ const TitleRed = (props) => {
   //Retornamos usando las variables 
 
       return (
-              <h1  className="title"  style={mystyle}>Hola, {name} {arrayLastName} tienes {edad} </h1>
+              <h1  className="title"  style={mystyle}>Hola, {name} {arrayLastName} tienes: {edad} </h1>
              )
 }
 
