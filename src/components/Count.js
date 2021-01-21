@@ -12,6 +12,21 @@ class Count extends Component {
       count : 1
     }
   }
+
+  componentDidMount(){
+    console.log("El componente se cargo en el DOM")
+    //Llamamos a la API 
+  }
+  componentDidUpdate(propsOlds, stateOlds){
+    console.log("El componente se actualizo")
+    console.log("Pros old", propsOlds)
+    console.log("stated old", stateOlds)
+  }
+
+  componentWillUnmount(){
+    console.log("Adios")
+  }
+
   inc(){
     this.setState((estadoAnterior)=>{
      return {

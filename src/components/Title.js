@@ -1,6 +1,9 @@
 
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
+import styles from './CountFuntional.module.css'
+import  Boton from '../elementos/Boton'
+import Title from '../elementos/Title'
 
 
 
@@ -23,7 +26,10 @@ const TitleRed = (props) => {
   //Retornamos usando las variables 
 
       return (
-              <h1  className="title"  style={mystyle}>Hola, {name} {arrayLastName} tienes: {edad} </h1>
+              <div>
+                <Title>Hola, {name} {arrayLastName} tienes: {edad} </Title>
+                <Boton orange>Test Botón</Boton>
+              </div>
              )
 }
 
@@ -45,7 +51,7 @@ const TitleBlue = ({user = 'Usuario', edad}) => {
   //Retornamos usando las variables 
 
   return (
-    <h1  className="title"  style={mystyle}>Hola, {user} hoy cumples {edad} </h1>
+    <Title>Hola, {user} hoy cumples {edad} </Title>
   )
 }
 

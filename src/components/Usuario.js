@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
 import ReactDOM from 'react-dom'
 import {TitleRed, TitleBlue} from './Title'
+import styled from 'styled-components'
+import Boton from '../elementos/Boton'
 
 
 const Usuario = ()=>{
@@ -24,7 +26,7 @@ const Usuario = ()=>{
                  
                   <TitleRed user="Amaury" edad='29' array={['Soto']} />
                   <TitleBlue user="Mario" edad='21'/>
-                  <p>Ingeniero::</p>  
+                  <Parrafo>Ingeniero::</Parrafo>  
                    { pais &&  <p>Tú país es: {pais} </p>     }
                     <ul>
                           {/* Handle MAP of Array Friends */}
@@ -39,11 +41,17 @@ const Usuario = ()=>{
                                                     })
 
                       }
-                  <button onClick={()=> changePais("Colombia")}>Cambiar</button>
+                  <Boton largo onClick={()=> changePais(pais + " De aquí")}>Cambiar</Boton>
                </ul>      
             </div>
 
   )
 }
+
+const Parrafo = styled.p`
+margin-bottom: 10px;
+color: red 
+
+`
 
 export default Usuario

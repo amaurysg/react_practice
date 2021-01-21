@@ -5,33 +5,40 @@ import Usuario from './components/Usuario'
 import Formulario from './components/Formulario'
 import Count from './components/Count'
 import CountFuntional from './components/CountFuntional'
+import './index.css'
+import Boton from './elementos/Boton'
+import ExemploUseReducer from './components/ExemploUseReducer'
+import Blog from './components/Blog'
+
 //Definimos variable sesion
 
 
 const App = ()=>{
   
-const [sesion, cambiarEstadoSesion] = useState(true)
+const [sesion, cambiarEstadoSesion] = useState(false)
 
   return (
-            <>
+            <div className="contenedor"> 
               { sesion === true ?
                 <div>
                    <Usuario/>
-               {/*     <Count /> */}
-                   <CountFuntional cantidadI={20}  cantidadD={2} />
-                   <button onClick={()=>cambiarEstadoSesion(false)}>Cerrar Sesión</button>
+                    <Blog/>
+                  {/*  <Count /> */}
+                  {/*  <CountFuntional cantidadI={20}  cantidadD={2} />  */}
+                  <ExemploUseReducer/>
+                   <Boton largo rojo onClick={()=>cambiarEstadoSesion(false)}>Cerrar Sesión</Boton>
                </div>     
 
                  : 
 
                <div>
-                   <p>No iniciaste</p> 
+              
                    <Formulario  cambiarEstadoSesion={cambiarEstadoSesion} />
                   {/*  <button onClick={()=> cambiarEstadoSesion(false)}>Iniciar Sesión</button>     */}     
                    
                </div>
                }  
-            </>
+            </div>
             ) 
 
 }

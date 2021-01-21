@@ -1,4 +1,6 @@
 import React, {useState} from 'react'
+import styles from './Formulario.module.css'
+import Boton from './../elementos/Boton'
 
 
 const Formulario = (props) => {
@@ -58,13 +60,16 @@ const Formulario = (props) => {
     fontFamily: 'arial'
   }
   return (
-      <form action=""  onSubmit={onSubmit} style={styledForm}>
+      <form className={styles.formulario} action=""  onSubmit={onSubmit} >
+
           <p>Usuario:  {usuario} </p>
           <p>Password: {password} </p>
           <p>Email: {email} </p>
+          <h1>No has iniciado sesión</h1>
           <div>
-            <label htmlFor="usuario">Usuario</label>
-              <input 
+            <label htmlFor="usuario" className={styles.label} >Usuario</label>
+              <input  
+              className={styles.input}
               type="text" 
               name="usuario" 
               id="usuario"
@@ -73,16 +78,18 @@ const Formulario = (props) => {
               />
           </div>
           <div>
-            <label htmlFor="password">Password</label>
+            <label htmlFor="password" className={styles.label}>Password</label>
             {/* SIN TABULAR */}
-              <input type="password" name="password" id="password" value={password} onChange={onChange} />
+              <input className={styles.input} type="password" name="password" id="password" value={password} onChange={onChange} />
           </div>
           <div>
             <label htmlFor="email">Email</label>
             {/* SIN TABULAR */}
-              <input type="email" name="email" id="email" value={email} onChange={onChange} />
+              <input className={styles.input} type="email" name="email" id="email" value={email} onChange={onChange} />
           </div>
-          <button type='submit'> Iniciar Sesión</button>
+          <div>
+            <Boton largo type='submit'> Iniciar Sesión</Boton>
+          </div>
       </form>
   )
 }
